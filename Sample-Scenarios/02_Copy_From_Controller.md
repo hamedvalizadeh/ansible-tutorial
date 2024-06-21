@@ -1,6 +1,8 @@
 # Subject
 
-we want to setup a `controller node`, and 2 `managed nodes`, and configure our `controller node` to be able to connect to `managed nodes` by ssh key, and create a directory named `dir_created_by_controller` in managed nodes and then create a file from our controller node to the just created directory in managed nodes. so we will do the following steps:
+we want to setup a `controller node`, and 2 `managed nodes`, and configure our `controller node` to be able to connect to `managed nodes` by ssh key;
+
+then we will create a file in our controller node and name it as `file_in_controller_node.txt` and finally will create a directory named `dir_created_by_controller` in managed nodes and copy file from controller node to managed nodes by the help of ansible `ad-hoc` command. so we will do the following steps:
 
 1. setup 2 `managed nodes`.
 2. setup `controller node`.
