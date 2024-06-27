@@ -73,3 +73,37 @@ but the following `ad-hoc` command read inventory from the path `/my-anisble-prj
 sudo ansible all -i /my-anisble-prj/hosts.yaml -m ping
 ```
 
+
+
+# Facts
+
+these are some meta data about managed nodes machines that are retrieved by controller node and saved as variables in controller node to be used in writing better playbooks.
+
+for example when we know the OS, Architecture, and so many info about our managed nodes, we can use this info to have some roles and tasks based on them.
+
+before running a playbook, by default`gether-fact` module runs and retrieve these information, that we can disable this behavior.  
+
+also we can manually call the `setup` module to gather facts about our nodes. 
+
+for example following `ad-hoc` command will retrieve facts of managed nodes of group `all` declared inside host file `inventory/hosts.yaml`:
+
+```powershell
+sudo ansible all -i inventory/hosts.yaml -m setup
+```
+
+
+
+following `ad-hoc` command will retrieve facts of managed nodes of group `hamed_group` declared inside host file `inventory/hosts.yaml`:
+
+```powershell
+sudo ansible hamed_group -i inventory/hosts.yaml -m setup
+```
+
+
+
+following `ad-hoc` command will retrieve facts about OS of managed nodes of group `hamed_group` declared inside host file `inventory/hosts.yaml`:
+
+```powershell
+sudo ansible hamed_group -i inventory/hosts.yaml -m setup -a "filter=ansible_os_family"
+```
+
