@@ -52,7 +52,7 @@ then create a file file named `package-nginx.yaml` and paste the following conte
 
 ```powershell
 ---
-- name: installing unzip package
+- name: installing nginx package
   hosts: all
   tasks:
     - name: Install package
@@ -64,6 +64,25 @@ then create a file file named `package-nginx.yaml` and paste the following conte
 
 
 **HINT:** value of `hosts` refers to the `all` group declared inside `hosts` file in `inventory` directory inside `ansible_nginx_prj`. if this file does not exists, it refers to the default path `/etc/ansible/hosts`.
+
+for example if our `hosts` file content was as follow:
+
+```powershell
+hamed_group:
+ hosts:
+   192.168.56.105:
+     ansible_user: hamed
+     ansible_port: 22
+     ansible_ssh_private_key_file: /home/vagrant/.ssh/id_rsa
+hooman_group:
+ hosts:
+    192.168.56.107:
+     ansible_user: hamed
+     ansible_port: 22
+     ansible_ssh_private_key_file: /home/vagrant/.ssh/id_rsa
+```
+
+instead of `all` as the value of `hosts` in our playbook, we could use either of the values `hamed_group` or `hooman_group`.
 
 
 
