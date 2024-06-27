@@ -50,3 +50,26 @@ for example it is possible to install applications, copy files, change configura
 # Ansible ad-hoc commands
 
 One of the simplest ways Ansible can be used is by using ad-hoc commands. These can be used when you want to issue some commands on a server or a bunch of servers. Ad-hoc commands are not stored for future uses but represent a fast way to interact with the desired servers.
+
+
+
+# Inventory
+
+this is a file in which the connection information of the managed nodes are defined, and also this connections info are grouped and categorized.
+
+by default ansible read this file from path `/etc/ansible/host`, but you can have your inventory file in each project directory separately. 
+
+for example if you execute the following `ad-hoc` command, the default inventory is read:  
+
+```powershell
+sudo ansible all -m ping
+```
+
+
+
+but the following `ad-hoc` command read inventory from the path `/my-anisble-prj/hosts.yaml`:
+
+```powershell
+sudo ansible all -i /my-anisble-prj/hosts.yaml -m ping
+```
+
