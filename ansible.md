@@ -8,6 +8,14 @@ for example it is possible to install applications, copy files, change configura
 
 
 
+# Workflow
+
+![](ansible-works.png)
+
+
+
+
+
 # Key Terms in Ansible
 
 - **Controller Machine** 
